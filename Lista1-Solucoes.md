@@ -2,7 +2,7 @@
 
 ### Lista de conteúdos
 
-- [Exercício 1](#exercício-1) (incompleto)
+- [Exercício 1](#exercício-1)
 - [Exercício 2](#exercício-2)
 - [Exercício 3](#exercício-3)
 - [Exercício 4](#exercício-4) (incompleto)
@@ -29,6 +29,61 @@ As taxas de produção em unidades por hora são 1,25 e 1 para os produtos A e B
 <br>
 
 ## Solução
+
+Variáveis de decisão:
+
+- $x_{A1}$ (unid. do produto A produzidas em junho)
+- $x_{A2}$ (unid. do produto A produzidas em julho)
+- $x_{A3}$ (unid. do produto A produzidas em agosto)
+
+<br>
+
+- $x_{B1}$ (unid. do produto B produzidas em junho)
+- $x_{B2}$ (unid. do produto B produzidas em julho)
+- $x_{B3}$ (unid. do produto B produzidas em agosto)
+
+<br>
+
+- $I_{A1}$ (unid. do produto A no estoque em junho)
+- $I_{A2}$ (unid. do produto A no estoque em julho)
+- $I_{A3}$ (unid. do produto A no estoque em agosto)
+
+<br>
+
+- $I_{B1}$ (unid. do produto B no estoque em junho)
+- $I_{B2}$ (unid. do produto B no estoque em julho)
+- $I_{B3}$ (unid. do produto B no estoque em agosto)
+
+<br>
+
+Função objetivo:
+
+- Custo de produção: $30*(x_{A1} + x_{A2} + x_{A3}) + 28*(x_{B1} + x_{B2} + x_{B3})$
+- Custo de estoque: $0,9*(I_{A1} + I_{A2} + I_{A3}) + 0,75*(I_{B1} + I_{B2} + I_{B3})$
+- Função objetivo:
+
+```math
+\displaylines{
+    \text{min } z = & 30*(x_{A1} + x_{A2} + x_{A3}) + 28*(x_{B1} + x_{B2} + x_{B3})\\
+    & + 0,9*(I_{A1} + I_{A2} + I_{A3}) + 0,75*(I_{B1} + I_{B2} + I_{B3})
+}
+```
+
+<br>
+
+Restrições:
+
+| Restrição    | Junho                             | Julho                             | Agosto                         |
+|--------------|-----------------------------------|-----------------------------------|--------------------------------|
+| Demanda de A | $I_{A1} + x_{A1} - I_{A2} = 500$  | $I_{A2} + x_{A2} - I_{A3} = 500$  | $I_{A3} + x_{A3} = 750$        |
+| Demanda de B | $I_{B1} + x_{B1} - I_{B2} = 1000$ | $I_{B2} + x_{B2} - I_{B3} = 1200$ | $I_{B3} + x_{B3} = 1200$       |
+| Capacidade   | $1,25x_{A1} + x_{B1} \le 3000$    | $1,25x_{A2} + x_{B2} \le 3500$    | $1,25x_{A3} + x_{B3} \le 3000$ |
+
+<br>
+
+- $x_{jk} \ge 0$
+- $I_{jk} \ge 0$
+
 
 ---
 
