@@ -7,7 +7,7 @@
 - [Exercício 3](#exercício-3)
 - [Exercício 4](#exercício-4) (incompleto)
 - [Exercício 5](#exercício-5) (incompleto)
-- [Exercício 6](#exercício-6) (incompleto)
+- [Exercício 6](#exercício-6)
 - [Exercício 7](#exercício-7)
 
 <br>
@@ -239,6 +239,35 @@ Tabela 1. Composição de nutrientes por alimento.
 <br>
 
 ## Solução
+
+Variáveis de decisão:
+
+- $x_{soja}$ (kg de soja)
+- $x_{milho}$ (kg de milho)
+- $x_{cana}$ (kg de cana)
+
+<br>
+
+Função objetivo:
+
+```math
+\displaylines{
+    \text{min } z = 15x_{soja} + 20x_{milho} + 8x_{cana}
+}
+```
+
+<br>
+
+Restrições:
+
+| Restrição            | Fórmula                                                     |
+|----------------------|-------------------------------------------------------------|
+| Demanda (kg)         | $x_{soja} + x_{milho} + x_{cana} = 1000$                    |
+| Cálcio (por kg)      | $8 \le 0,002x_{soja} + 0,01x_{milho} + 0,03x_{cana} \le 12$ |
+| Proteína (por kg)    | $0,5x_{soja} + 0,09x_{milho} \ge 22$                        |
+| Carboidrato (por kg) | $0,008x_{soja} + 0,02x_{milho} + 0,02x_{cana} \le 200$      |
+
+
 
 ---
 
