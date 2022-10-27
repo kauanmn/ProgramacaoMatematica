@@ -1,7 +1,18 @@
 # Lista 1 - Modelagem
 
+### Lista de conteúdos
 
-## Exercício 1
+- [Exercício 1](#exercício-1) (incompleto)
+- [Exercício 2](#exercício-2)
+- [Exercício 3](#exercício-3)
+- [Exercício 4](#exercício-4) (incompleto)
+- [Exercício 5](#exercício-5) (incompleto)
+- [Exercício 6](#exercício-6) (incompleto)
+- [Exercício 7](#exercício-7)
+
+<br>
+
+# Exercício 1
 
 Uma empresa foi contratada para produzir dois produtos, A e B, nos meses de junho, julho e agosto. A capacidade total de produção (em horas) varia mensalmente, conforme apresentado a seguir:
 
@@ -17,13 +28,14 @@ As taxas de produção em unidades por hora são 1,25 e 1 para os produtos A e B
 
 <br>
 
-### Solução
+## Solução
 
 ---
 
 <br>
+<br>
 
-## Exercício 2
+# Exercício 2
 
 Em grande parte dos campuses universitários, os departamentos contratam alunos bolsistas para prestar alguns serviços. A necessidade destes serviços varia durante o horário normal de trabalho (8h às 17h).
 
@@ -37,13 +49,53 @@ Considere que nenhum dos estudantes deve começar a trabalhar na hora do almoço
 
 <br>
 
-### Solução
+## Solução
+
+Variáveis de decisão:
+
+- $x_{8}$: alunos que começaram a trabalhar 8h
+- $x_{9}$: alunos que começaram a trabalhar 9h
+- $x_{10}$: alunos que começaram a trabalhar 10h
+- $x_{11}$: alunos que começaram a trabalhar 11h
+- $x_{12}$: alunos que começaram a trabalhar 12h
+- $x_{13}$: alunos que começaram a trabalhar 13h
+- $x_{14}$: alunos que começaram a trabalhar 14h
+- $x_{15}$: alunos que começaram a trabalhar 15h
+- $x_{16}$: alunos que começaram a trabalhar 16h
+
+<br>
+
+Função objetivo:
+
+```math
+\displaylines{
+    \text{min } z = x_{8} + x_{9} + x_{10} + x_{11} + x_{12} + x_{13} + x_{14} + x_{15} + x_{16}
+}
+```
+
+<br>
+
+Restrições:
+
+| Restrição          | Fórmula                          |
+|--------------------|----------------------------------|
+| Meio-dia           | $x_{12} = 0$                     |
+| Min. alunos às 8h  | $x_{8} \ge 2$                    |
+| Min. alunos às 9h  | $x_{8} + x_{9} \ge 2$            |
+| Min. alunos às 10h | $x_{8} + x_{9} + x_{10} \ge 3$   |
+| Min. alunos às 11h | $x_{9} + x_{10} + x_{11} \ge 4$  |
+| Min. alunos às 12h | $x_{10} + x_{11} \ge 4$          |
+| Min. alunos às 13h | $x_{11} + x_{13} \ge 3$          |
+| Min. alunos às 14h | $x_{13} + x_{14} \ge 3$          |
+| Min. alunos às 15h | $x_{13} + x_{14} + x_{15} \ge 3$ |
+| Min. alunos às 16h | $x_{14} + x_{15} + x_{16} \ge 3$ |
 
 ---
 
 <br>
+<br>
 
-## Exercício 3
+# Exercício 3
 
 Uma empresa produz televisão em 3 fábricas: São Paulo, João Pessoa e Manaus. Os pontos principais de revenda, com as respectivas encomendas mensais são:
 
@@ -81,7 +133,7 @@ Determinar o número de unidades produzidas em cada fábrica e entregues a cada 
 
 <br>
 
-### Solução
+## Solução
 
 Variáveis de decisão:
 - $x_{1i}$ = unidades que saem de São Paulo
@@ -123,8 +175,9 @@ Restrições:
 ---
 
 <br>
+<br>
 
-## Exercício 4
+# Exercício 4
 
 Uma empresa imobiliária está desenvolvendo um projeto habitacional de casas de aluguel e um espaço para o comércio varejista. O projeto habitacional consiste em apartamentos funcionais, apartamentos duplex e unidades residenciais simples.
 
@@ -142,13 +195,14 @@ O aluguel de espaços para comércio varejista é $100/pés².
 
 <br>
 
-### Solução
+## Solução
 
 ---
 
 <br>
+<br>
 
-## Exercício 5
+# Exercício 5
 
 Um fabricante de tiras metálicas recebeu um pedido para produzir 2000 tiras de tamanho 2cm x 4cm e 1000 tiras de 4cm x 7cm.
 
@@ -162,13 +216,14 @@ O departamento técnico encarregado de planejar o atendimento ao pedido decidiu 
 
 <br>
 
-### Solução
+## Solução
 
 ---
 
 <br>
+<br>
 
-## Exercício 6
+# Exercício 6
 
 Um fabricante de rações quer determinar a fórmula mais econômica de certa ração. A composição nutritiva dos ingredientes disponíveis no mercado e os seus custos são descritos na Tabela 1. O fabricante deve entregar 1000 quilos de ração por dia e garantir que esta contenha no mínimo 0,8% e no máximo 1,2% de cálcio, não menos do que 22% de proteína e no máximo 20% de carboidratos.
 
@@ -178,17 +233,19 @@ Um fabricante de rações quer determinar a fórmula mais econômica de certa ra
 | Proteína                  | 50%  | 9%    | -    |
 | Carboidratos              | 0,8% | 2%    | 2%   |
 | Custo (R$/kg)             | 15   | 20    | 8    |
+
 Tabela 1. Composição de nutrientes por alimento.
 
 <br>
 
-### Solução
+## Solução
 
 ---
 
 <br>
+<br>
 
-## Exercício 7
+# Exercício 7
 
 Uma determinada empresa está interessada em maximizar o lucro mensal proveniente de quatro de seus produtos, designados por I, II, III e IV. Para fabricar esses produtos, ela utiliza dois tipos de máquinas (M1 e M2) e dois tipos de mão-de-obra (MO1 e MO2), que têm as seguintes disponibilidades:
 
@@ -243,5 +300,37 @@ Produtos:
 
 <br>
 
-### Solução
+## Solução
 
+Variáveis de decisão:
+
+- $x_{1}$: unidades do produto I
+- $x_{2}$: unidades do produto II
+- $x_{3}$: unidades do produto III
+- $x_{4}$: unidades do produto IV
+
+<br>
+
+Função objetivo:
+
+```math
+\displaylines{
+    \text{max } z = 10x_{1} + 8x_{2} + 9x_{3} + 7x_{4}
+}
+```
+
+<br>
+
+Restrições:
+
+| Restrição           | Fórmula                                     |
+|---------------------|---------------------------------------------|
+| Potencial (prod. 1) | $x_{1} \le 70$                              |
+| Potencial (prod. 2) | $x_{2} \le 60$                              |
+| Potencial (prod. 3) | $x_{3} \le 40$                              |
+| Potencial (prod. 4) | $x_{4} \le 20$                              |
+| Tempo máq. 1        | $5x_{1} + 4x_{2} + 8x_{3} + 9x_{4} \le 80$  |
+| Tempo máq. 2        | $2x_{1} + 6x_{2} + 8x_{4} \le 20$           |
+| Tempo máq. 3        | $3x_{1} + 4x_{2} + 6x_{3} + 2x_{4} \le 40$  |
+| Mão de obra 1       | $2x_{1} + 4x_{2} + 2x_{3} + 8x_{4} \le 120$ |
+| Mão de obra 2       | $7x_{1} + 3x_{2} + 7x_{4} \le 160$          |
