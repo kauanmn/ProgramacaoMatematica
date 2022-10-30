@@ -419,10 +419,10 @@ Função objetivo:
 
 ### Solução
 
-- $(x_{1}, x_{2}) = (0.0, 0.0) \rightarrow z = -3x_{1} + 2x_{2} = -3 \times 0.0 + 2 \times 0.0 = 0$
-- $(x_{1}, x_{2}) = (0.0, 2.0) \rightarrow z = -3x_{1} + 2x_{2} = -3 \times 0.0 + 2 \times 2.0 = 4$
-- $(x_{1}, x_{2}) = (0.8, 3.6) \rightarrow z = -3x_{1} + 2x_{2} = -3 \times 0.8 + 2 \times 3.6 = 4.8$
-- $(x_{1}, x_{2}) = (8.0, 0.0) \rightarrow z = -3x_{1} + 2x_{2} = -3 \times 8.0 + 2 \times 0.0 = -24$
+- $(x_{1}, x_{2}) = (0.0, 0.0) \rightarrow z = -3x_{1} + 2x_{2} = -3 \times 0.0 - 2 \times 0.0 = 0$
+- $(x_{1}, x_{2}) = (0.0, 2.0) \rightarrow z = -3x_{1} + 2x_{2} = -3 \times 0.0 - 2 \times 2.0 = -4$
+- $(x_{1}, x_{2}) = (0.8, 3.6) \rightarrow z = -3x_{1} + 2x_{2} = -3 \times 0.8 - 2 \times 3.6 = -9.6$
+- $(x_{1}, x_{2}) = (8.0, 0.0) \rightarrow z = -3x_{1} + 2x_{2} = -3 \times 8.0 - 2 \times 0.0 = -24$
 
 Portanto, a solução ótima é 
 
