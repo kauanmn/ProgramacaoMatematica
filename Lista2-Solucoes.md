@@ -265,6 +265,25 @@ Considere as funções objetivos e, utilizando a representação gráfica, ache 
 <br>
 
 
+### Restrições
+
+Como as restrições são iguais para todos os subitens, será plotada a área viável comum entre eles:
+
+![image](https://user-images.githubusercontent.com/23441506/198860190-5150ebca-589f-466c-ab23-24a07067b49c.png)
+
+<br>
+
+Os pontos extremos são:
+
+- $(0.0, 0.0)$
+- $(0.0, 2.0)$
+- $(0.8, 3.6)$
+- $(8.0, 0.0)$
+
+
+<br>
+
+
 ## Exercício 2A
 
 Função objetivo:
@@ -277,6 +296,24 @@ Função objetivo:
 <br>
 
 
+### Solução
+
+- $(x_{1}, x_{2}) = (0.0, 0.0) \rightarrow z = x_{2} = 0.0$
+- $(x_{1}, x_{2}) = (0.0, 2.0) \rightarrow z = x_{2} = 2.0$
+- $(x_{1}, x_{2}) = (0.8, 3.6) \rightarrow z = x_{2} = 3.6$
+- $(x_{1}, x_{2}) = (8.0, 0.0) \rightarrow z = x_{2} = 0.0$
+
+<br>
+
+Portanto, a solução ótima é 
+
+- $(x_{1}, x_{2}) = (0.8, 3.6)$
+- $z = 3.6$
+
+
+<br>
+
+
 ## Exercício 2B
 
 Função objetivo:
@@ -284,6 +321,23 @@ Função objetivo:
 ```math
     \text{max } z = 3x_{1} + 2x_{2}
 ```
+
+
+<br>
+
+### Solução
+
+- $(x_{1}, x_{2}) = (0.0, 0.0) \rightarrow z = 3x_{1} + 2x_{2} = 3 \times 0.0 + 2 \times 0.0 = 0$
+- $(x_{1}, x_{2}) = (0.0, 2.0) \rightarrow z = 3x_{1} + 2x_{2} = 3 \times 0.0 + 2 \times 2.0 = 4$
+- $(x_{1}, x_{2}) = (0.8, 3.6) \rightarrow z = 3x_{1} + 2x_{2} = 3 \times 0.8 + 2 \times 3.6 = 9.6$
+- $(x_{1}, x_{2}) = (8.0, 0.0) \rightarrow z = 3x_{1} + 2x_{2} = 3 \times 8.0 + 2 \times 0.0 = 24$
+
+<br>
+
+Portanto, a solução ótima é 
+
+- $(x_{1}, x_{2}) = (8.0, 0.0)$
+- $z = 24$
 
 
 <br>
@@ -301,6 +355,24 @@ Função objetivo:
 <br>
 
 
+### Solução
+
+- $(x_{1}, x_{2}) = (0.0, 0.0) \rightarrow z = 2x_{1} + 2x_{2} = 2 \times 0.0 - 2 \times 0.0 = 0$
+- $(x_{1}, x_{2}) = (0.0, 2.0) \rightarrow z = 2x_{1} + 2x_{2} = 2 \times 0.0 - 2 \times 2.0 = -4$
+- $(x_{1}, x_{2}) = (0.8, 3.6) \rightarrow z = 2x_{1} + 2x_{2} = 2 \times 0.8 - 2 \times 3.6 = -5.6$
+- $(x_{1}, x_{2}) = (8.0, 0.0) \rightarrow z = 2x_{1} + 2x_{2} = 2 \times 8.0 - 2 \times 0.0 = 16$
+
+<br>
+
+Portanto, a solução ótima é 
+
+- $(x_{1}, x_{2}) = (0.8, 3.6)$
+- $z = -5.6$
+
+
+<br>
+
+
 ## Exercício 2D
 
 Função objetivo:
@@ -308,6 +380,28 @@ Função objetivo:
 ```math
     \text{max } z = 2x_{1} + 4x_{2}
 ```
+
+
+<br>
+
+### Solução
+
+- $(x_{1}, x_{2}) = (0.0, 0.0) \rightarrow z = 2x_{1} + 4x_{2} = 2 \times 0.0 + 4 \times 0.0 = 0$
+- $(x_{1}, x_{2}) = (0.0, 2.0) \rightarrow z = 2x_{1} + 4x_{2} = 2 \times 0.0 + 4 \times 2.0 = 8$
+- $(x_{1}, x_{2}) = (0.8, 3.6) \rightarrow z = 2x_{1} + 4x_{2} = 2 \times 0.8 + 4 \times 3.6 = 16$
+- $(x_{1}, x_{2}) = (8.0, 0.0) \rightarrow z = 2x_{1} + 4x_{2} = 2 \times 8.0 + 4 \times 0.0 = 16$
+
+<br>
+
+Portanto, a solução ótima é 
+
+- $(x_{1}, x_{2}) = (8.0, 0.0)$
+- $z = 16$
+
+OU
+
+- $(x_{1}, x_{2}) = (0.8, 3.6)$
+- $z = 16$
 
 
 <br>
@@ -320,3 +414,17 @@ Função objetivo:
 ```math
     \text{min } z = -3x_{1} - 2x_{2}
 ```
+
+<br>
+
+### Solução
+
+- $(x_{1}, x_{2}) = (0.0, 0.0) \rightarrow z = -3x_{1} + 2x_{2} = -3 \times 0.0 + 2 \times 0.0 = 0$
+- $(x_{1}, x_{2}) = (0.0, 2.0) \rightarrow z = -3x_{1} + 2x_{2} = -3 \times 0.0 + 2 \times 2.0 = 4$
+- $(x_{1}, x_{2}) = (0.8, 3.6) \rightarrow z = -3x_{1} + 2x_{2} = -3 \times 0.8 + 2 \times 3.6 = 4.8$
+- $(x_{1}, x_{2}) = (8.0, 0.0) \rightarrow z = -3x_{1} + 2x_{2} = -3 \times 8.0 + 2 \times 0.0 = -24$
+
+Portanto, a solução ótima é 
+
+- $(x_{1}, x_{2}) = (8.0, 0.0)$
+- $z = -24$
