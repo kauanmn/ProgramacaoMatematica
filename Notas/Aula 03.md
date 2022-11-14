@@ -1,4 +1,4 @@
-# Programação Matemática - Aula 3
+# Programação Matemática - Aula 03
 
 ## Alocação de Recursos
 
