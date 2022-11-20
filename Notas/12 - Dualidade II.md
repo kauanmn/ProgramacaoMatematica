@@ -236,3 +236,94 @@ Considere o seguinte PPL da dieta:
 
 - Modele o problema e ache as soluções primal e dual através do dual simplex
 - Interprete as soluções
+
+<br>
+
+### Solução
+
+### 1. Modele o problema
+
+<br>
+
+**PRIMAL**
+
+```math
+    \text{min } z = 50x_1 + 100x_2 + 51x_3
+```
+
+<br>
+
+Sujeito a:
+
+```math
+\displaylines{
+    10x_1 + 1x_2 + 9x_3 \ge 5 \\
+    10x_1 + 10x_2 + 10x_3 \ge 50 \\
+    10x_1 + 11x_2 + 11x_3 \ge 10 \\
+    x_1,x_2,x_3 \ge 0
+}
+```
+
+<br>
+
+**DUAL**
+
+```math
+    \text{max } y = 5w_1 + 50w_2 + 10w_3
+```
+
+Sujeito a:
+
+```math
+\displaylines{
+    10w_1 + 10w_2 + 10w_3 \le 50 \\
+    1w_1 + 10w_2 + 11w_3 \le 100 \\
+    9w_1 + 10w_2 + 11w_3 \le 51 \\
+    w_1, w_2, w_3 \ge 0
+}
+```
+
+<br>
+
+#### Forma Padrão
+
+**PRIMAL**
+
+```math
+    \text{min } z = 50x_1 + 100x_2 + 51x_3
+```
+
+<br>
+
+Sujeito a:
+
+```math
+\displaylines{
+    10x_1 + 1x_2 + 9x_3 - x_4 = 5 \\
+    10x_1 + 10x_2 + 10x_3 - x_5 = 50 \\
+    10x_1 + 11x_2 + 11x_3 - x_6 = 10 \\
+    x_1,x_2,x_3,x_4,x_5,x_6 \ge 0
+}
+```
+
+<br>
+
+**DUAL**
+
+```math
+    \text{max } y = 5w_1 + 50w_2 + 10w_3
+```
+
+Sujeito a:
+
+```math
+\displaylines{
+    10w_1 + 10w_2 + 10w_3 + w_4 = 50 \\
+    1w_1 + 10w_2 + 11w_3 + w_5  = 100 \\
+    9w_1 + 10w_2 + 11w_3 + w_6  = 51 \\
+    w_1,w_2,w_3,w_4,w_5,w_6 \ge 0
+}
+```
+
+<br>
+
