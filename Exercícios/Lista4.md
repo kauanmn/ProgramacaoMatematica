@@ -20,7 +20,7 @@ Programação Matemática
     - [Exercício 4C](#exercício-4c) (incompleto)
     - [Exercício 4D](#exercício-4d) (incompleto)
 - [Exercício 5](#exercício-5)
-    - [Exercício 5A](#exercício-5a) (incompleto)
+    - [Exercício 5A](#exercício-5a)
     - [Exercício 5B](#exercício-5b) (incompleto)
 - [Exercício 6](#exercício-6)
     - [Exercício 6A](#exercício-6a) (incompleto)
@@ -313,7 +313,112 @@ Sujeito a:
 
 ### Solução
 
-SOLUÇÃO
+**FORMA PADRÃO**
+
+```math
+-\text{min } -z = -2x_1 - 4x_2
+```
+
+Sujeito a:
+
+```math
+\displaylines{
+    x_1 + 2x_2 + x_3 = 5 \\
+    x_1 + x_2 + x_4 = 4 \\
+    x_1,x_2,x_3,x_4 \ge 0
+}
+```
+
+<br>
+
+**MATRIZES**
+
+```math
+A = \begin{bmatrix} 1 & 2 & 1 & 0 \\ 1 & 1 & 0 & 1 \end{bmatrix},
+b = \begin{bmatrix} 5 \\ 4 \end{bmatrix}, 
+c^T = \begin{bmatrix} -2 & -4 & 0 & 0 \end{bmatrix}
+```
+
+<br>
+
+**SOLUÇÃO INICIAL**
+
+```math
+\displaylines{
+    B = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}, R = \begin{bmatrix} 1 & 2 \\ 1 & 1 \end{bmatrix} \\
+    c^T_B = \begin{bmatrix} 0 & 0 \end{bmatrix}, c^T_R = \begin{bmatrix} -2 & -4 \end{bmatrix} \\
+    s_B = \{ 3,4 \}, s_R = \{ 1,2 \}
+}
+```
+
+<br>
+
+**PRIMEIRA ITERAÇÃO**
+
+1. Variável que entra na base é a que possui coeficiente mais negativo: $x_2$
+
+2. Variável que sai da base usa o teste da razão (entre $b$ e $R$): $\text{min }\\{ 5/2, 4/1 \\} \rightarrow x_3$
+
+3. Recalcular $s_B, s_R, B, R, c^T_B, c^T_R$:
+
+```math
+s_B = \{ 2,4 \}, s_R = \{ 1,3 \}
+```
+
+Assim:
+
+```math
+\displaylines{
+    B = \begin{bmatrix} 2 & 0 \\ 1 & 1 \end{bmatrix}, R = \begin{bmatrix} 1 & 1 \\ 1 & 0 \end{bmatrix} \\
+    c^T_B = \begin{bmatrix} -4 & 0 \end{bmatrix}, c^T_R = \begin{bmatrix} -2 & 0 \end{bmatrix}
+}
+```
+
+4. Calcular $B^{-1}$:
+
+```math
+B \cdot B^{-1} = I \rightarrow B^{-1} = \begin{bmatrix} 1/2 & 0 \\ -1/2 & 1 \end{bmatrix}
+```
+
+5. Calcular $x_B = B^{-1}b$:
+
+```math
+\begin{bmatrix} 1/2 & 0 \\ -1/2 & 1 \end{bmatrix}\begin{bmatrix} 5 \\ 4 \end{bmatrix} = \begin{bmatrix} 5/2 \\ 3/2 \end{bmatrix}
+```
+
+<br>
+
+Para avaliar a variável que vai entrar na base, deve-se calcular a matriz de coeficientes da função objetivo das variáveis não básicas por meio da equação $c^T_R - c^T_{B}B^{-1}R$.
+
+<br>
+
+6. Calcular $c^T_R - c^T_{B}B^{-1}R$:
+
+```math
+B^{-1}R = \begin{bmatrix} 1/2 & 0 \\ -1/2 & 1 \end{bmatrix}\begin{bmatrix} 1 & 1 \\ 1 & 0 \end{bmatrix} =
+\begin{bmatrix} 1/2 & 1/2 \\ 1/2 & -1/2 \end{bmatrix}
+```
+
+```math
+C^T_{B}B^{-1}R = \begin{bmatrix} -4 & 0 \end{bmatrix} \begin{bmatrix} 1/2 & 1/2 \\ 1/2 & -1/2 \end{bmatrix} =
+\begin{bmatrix} -2 & -2 \end{bmatrix}
+```
+
+```math
+c^T_R - c^T_{B}B^{-1}R = \begin{bmatrix} -2 & 0 \end{bmatrix} - \begin{bmatrix} -2 & -2 \end{bmatrix} =
+\begin{bmatrix} 0 & 2 \end{bmatrix}
+```
+
+<br>
+
+Como não há nenhum coeficiente negativo em $c^T_R - c^T_{B}B^{-1}R$, constata-se que a solução ótima foi alcançada. A solução ótima, para $s_B = \\{ 2,4 \\}$:
+
+```math
+\displaylines{
+    x^\ast = B^{-1}b = \begin{bmatrix} 5/2 \\ 3/2 \end{bmatrix} \rightarrow \{0, 5/2, 0, 3/2 \} \\
+    z = 4 * 5/2 = 10
+}
+```
 
 <br>
 
