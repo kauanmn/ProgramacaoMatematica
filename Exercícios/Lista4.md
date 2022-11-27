@@ -94,7 +94,56 @@ Sujeito a:
 
 ## Solução
 
-SOLUÇÃO
+Forma padrão
+
+```math
+-\text{min } -z = -2x_1 - 5x_2 + Mx_a
+```
+
+Sujeito a:
+
+```math
+\displaylines{
+    3x_1 + 2x_2 - x_3 + x_a = 6 \\
+    2x_1 + x_2 + x_4 = 2 \\
+    x_1,x_2,x_3,x_4,x_a \ge 0
+}
+```
+
+<br>
+
+**QUADRO INICIAL**
+
+|       | $x_1$ | $x_2$ | $x_3$ | $x_4$ | $x_a$ | $b$ |
+|-------|-------|-------|-------|-------|-------|-----|
+| $z$   | -2    | -5    | 0     | 0     | 10    | 0   |
+| $x_a$ | 3     | 2     | -1    | 0     | 1     | 6   |
+| $x_4$ | 2     | 1     | 0     | 1     | 0     | 2   |
+
+<br>
+
+- $x_2$ entra
+- $x_4$ sai $(2/2 = 1)$
+
+<br>
+
+- $L_3 \leftarrow L_3$
+- $L_2 \leftarrow L_2 - 2L_3$
+- $L_1 \leftarrow L_1 + 5L_3$
+
+<br>
+
+**ITERAÇÃO 1**
+
+|       | $x_1$ | $x_2$ | $x_3$ | $x_4$ | $x_a$ | $b$ |
+|-------|-------|-------|-------|-------|-------|-----|
+| $z$   | 8     | 0     | 0     | 5     | 10    | 10  |
+| $x_a$ | -1    | 0     | -1    | -2    | 1     | 2   |
+| $x_a$ | 2     | 1     | 0     | 1     | 0     | 2   |
+
+<br>
+
+Como não há mais variáveis com coeficientes negativos na linha da FO, então o algoritmo termina por aqui. No entanto, a solução ótima contém a variável artificial, o que não é possível. Este fato indica a inviabilidade do problema.
 
 ---
 
