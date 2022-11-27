@@ -12,7 +12,7 @@ Programação Matemática
 - [Exercício 1](#exercício-1)
     - [Exercício 1A](#exercício-1a) (incompleto)
     - [Exercício 1B](#exercício-1b) (incompleto)
-- [Exercício 2](#exercício-2) (incompleto)
+- [Exercício 2](#exercício-2)
 - [Exercício 3](#exercício-3) (incompleto)
 - [Exercício 4](#exercício-4)
     - [Exercício 4A](#exercício-4a) (incompleto)
