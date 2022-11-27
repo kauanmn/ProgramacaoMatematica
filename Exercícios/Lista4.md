@@ -1,5 +1,12 @@
 # Lista 4 - Simplex base não disponível e Simplex revisado
 
+**Universidade Federal do ABC**<br>
+Prof.ª Geiza Cristina da Silva<br>
+Programação Matemática
+
+
+<br>
+
 ### Lista de conteúdos
 
 - [Exercício 1](#exercício-1)
