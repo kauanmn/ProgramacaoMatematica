@@ -13,7 +13,7 @@ Programação Matemática
 - [Revisão](#revisão)
 - [Exercício 1](#exercício-1)
     - [Exercício 1A](#exercício-1A)
-    - [Exercício 1B](#exercício-1B) (incompleto)
+    - [Exercício 1B](#exercício-1B)
     - [Exercício 1C](#exercício-1C) (incompleto)
     - [Exercício 1D](#exercício-1D) (incompleto)
     - [Exercício 1E](#exercício-1E) (incompleto)
