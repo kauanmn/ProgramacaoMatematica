@@ -313,8 +313,24 @@ Sujeito a:
 
 ### Solução
 
-SOLUÇÃO
+**FORMA PADRÃO**
 
+```math
+- \text{min } -z = -7x_1 - 9x_2
+```
+
+Sujeito a:
+
+```math
+\displaylines{
+    -x_1 + x_2 + x_3 = 2 \\
+    3x_1 + 5x_2 + x_4 = 15 \\
+    5x_1 + 4x_2 + x_5 = 20 \\
+    x_1,x_2,x_3,x_4,x_5 \ge 0
+}
+```
+
+> Multipliquei a primeira restrição por $-1$ para que uma base esteja disponível logo no começo.
 
 <br>
 
