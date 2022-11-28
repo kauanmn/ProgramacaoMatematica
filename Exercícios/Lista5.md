@@ -73,7 +73,15 @@ Indique as soluções ótimas do primal e do dual.
 
 ### Solução
 
-SOLUÇÃO
+Primal:
+
+- $x^\ast = \\{ 10/3, 20/3 \\}$
+- $z = 50/3$
+
+Dual:
+
+- $x^\ast = \\{ 4/3 , 1/6 \\}$
+- $z = 50/3$
 
 <br>
 
@@ -85,7 +93,7 @@ Explique o significado das variáveis duais sobre o problema original.
 
 ### Solução
 
-SOLUÇÃO
+As variáveis duais representam a variação da função objetivo quando se varia a restrição relativa àquela variável dual em uma unidade.
 
 ---
 
