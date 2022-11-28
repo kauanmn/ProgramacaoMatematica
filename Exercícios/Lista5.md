@@ -11,8 +11,8 @@ Programação Matemática
 
 - [Exercício 1](#exercício-1) (incompleto)
 - [Exercício 2](#exercício-2)
-    - [Exercício 2A](#exercício-2a) (incompleto)
-    - [Exercício 2B](#exercício-2b) (incompleto)
+    - [Exercício 2A](#exercício-2a)
+    - [Exercício 2B](#exercício-2b)
 - [Exercício 3](#exercício-3)
     - [Exercício 3A](#exercício-3a) (incompleto)
     - [Exercício 3B](#exercício-3b) (incompleto)
