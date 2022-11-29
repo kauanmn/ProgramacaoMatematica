@@ -15,7 +15,7 @@ Programação Matemática
 - [Exercício 2](#exercício-2)
 - [Exercício 3](#exercício-3) (incompleto)
 - [Exercício 4](#exercício-4)
-    - [Exercício 4A](#exercício-4a) (incompleto)
+    - [Exercício 4A](#exercício-4a)
     - [Exercício 4B](#exercício-4b) (incompleto)
     - [Exercício 4C](#exercício-4c) (incompleto)
     - [Exercício 4D](#exercício-4d) (incompleto)
@@ -206,7 +206,177 @@ Sujeito a:
 
 ### Solução
 
-SOLUÇÃO
+**FORMA PADRÃO (Big-M)**
+
+```math
+-\text{min } -z = -3x_1 - 2x_2 - 3x_3 + Mx_7 (M = 10)
+```
+
+Sujeito a:
+
+```math
+\displaylines{
+    2x_1 + x_2 + x_3 - x_4 + x_7 = 2 \\
+    x_1 + 3x_2 + x_3 + x_5 = 6 \\
+    3x_1 + 4x_2 + 2x_3 + x_6 = 8 \\
+    x_1,x_2,x_3,x_4,x_5,x_6 \ge 0
+}
+```
+
+<br>
+
+**QUADRO INICIAL**
+
+|       | $x_1$ | $x_2$ | $x_3$ | $x_4$ | $x_5$ | $x_6$ | $x_7$ | $b$ |
+|-------|-------|-------|-------|-------|-------|-------|-------|-----|
+| $z$   | -3    | -2    | -3    | 0     | 0     | 0     | 10    | 0   |
+| $x_5$ | 1     | 3     | 1     | 0     | 1     | 0     | 0     | 6   |
+| $x_6$ | 3     | 4     | 2     | 0     | 0     | 1     | 0     | 8   |
+| $x_7$ | 2     | 1     | 1     | -1    | 0     | 0     | 1     | 2   |
+
+<br>
+
+#### ZERAR A VARIÁVEL ARTIFICIAL
+
+$L_1 \leftarrow L_1 - 10L_4$
+
+|       | $x_1$ | $x_2$ | $x_3$ | $x_4$ | $x_5$ | $x_6$ | $x_7$ | $b$ |
+|-------|-------|-------|-------|-------|-------|-------|-------|-----|
+| $z$   | -23   | -12   | -13   | 10    | 0     | 0     | 0     | -20 |
+| $x_5$ | 1     | 3     | 1     | 0     | 1     | 0     | 0     | 6   |
+| $x_6$ | 3     | 4     | 2     | 0     | 0     | 1     | 0     | 8   |
+| $x_7$ | 2     | 1     | 1     | -1    | 0     | 0     | 1     | 2   |
+
+<br>
+
+#### ITERAÇÃO 1
+
+**PASSO 1.2**
+
+Como há coeficientes negativos na linha da função objetivo, então a solução não é ótima.
+
+<br>
+
+**PASSO 1.3**
+
+Variável que vai entrar: $x_1$
+
+<br>
+
+**PASSO 1.4**
+
+Variável que vai sair: $\text{min } \\{ 6/1, 8/3, 2/2 \\} \rightarrow x_7$
+
+<br>
+
+**PASSO 1.5**
+
+- $L_4 \leftarrow L_4/2$
+- $L_1 \leftarrow L_1 + 23L_4$
+- $L_2 \leftarrow L_2 - L_4$
+- $L_3 \leftarrow L_3 - 3L_4$
+
+<br>
+
+**QUADRO**
+
+|       | $x_1$ | $x_2$ | $x_3$ | $x_4$ | $x_5$ | $x_6$ | $x_7$ | $b$ |
+|-------|-------|-------|-------|-------|-------|-------|-------|-----|
+| $z$   | 0     | -1/2  | -3/2  | -3/2  | 0     | 0     | 0     | 3   |
+| $x_5$ | 0     | 5/2   | 1/2   | 1/2   | 1     | 0     | -1/2  | 5   |
+| $x_6$ | 0     | 5/2   | 1/2   | 3/2   | 0     | 1     | -3/2  | 5   |
+| $x_1$ | 1     | 1/2   | 1/2   | -1/2  | 0     | 0     | 1/2   | 1   |
+
+<br>
+
+#### ITERAÇÃO 2
+
+**PASSO 2.2**
+
+Como há coeficientes negativos na linha da função objetivo, então a solução não é ótima.
+
+<br>
+
+**PASSO 2.3**
+
+Variável que vai entrar: $x_4$
+
+<br>
+
+**PASSO 2.4**
+
+Variável que vai sair: $\text{min } \\{ 5/(1/2), 5/(3/2) \\} \rightarrow x_6$
+
+<br>
+
+**PASSO 2.5**
+
+- $L_3 \leftarrow 2/3L_3$
+- $L_1 \leftarrow L_1 + 3/2 L_3$
+- $L_2 \leftarrow L_2 - 1/2 L_3$
+- $L_4 \leftarrow L_4 + 1/2 L_3$
+
+<br>
+
+**QUADRO**
+
+|       | $x_1$ | $x_2$ | $x_3$ | $x_4$ | $x_5$ | $x_6$ | $x_7$ | $b$  |
+|-------|-------|-------|-------|-------|-------|-------|-------|------|
+| $z$   | 0     | 2     | -1    | 0     | 0     | 1     | -3/2  | 8    |
+| $x_5$ | 0     | 5/3   | 1/3   | 0     | 1     | -1/3  | 0     | 10/3 |
+| $x_4$ | 0     | 5/3   | 1/3   | 1     | 0     | 2/3   | -1    | 10/3 |
+| $x_1$ | 1     | 4/3   | 2/3   | 0     | 0     | 1/3   | 0     | 8/3  |
+
+<br>
+
+#### ITERAÇÃO 3
+
+**PASSO 3.2**
+
+Como há coeficientes negativos na linha da função objetivo, então a solução não é ótima.
+
+<br>
+
+**PASSO 3.3**
+
+Variável que vai entrar: $x_3$
+
+<br>
+
+**PASSO 3.4**
+
+Variável que vai sair: $\text{min } \\{ (10/3)/(1/3), (8/3)/(2/3) \\} \rightarrow x_1$
+
+<br>
+
+**PASSO 3.5**
+
+- $L_4 \leftarrow 3/2 L_4$
+- $L_1 \leftarrow L_1 + L_4$
+- $L_2 \leftarrow L_2 - 1/3 L_4$
+- $L_3 \leftarrow L_3 - 1/3 L_4$
+
+<br>
+
+**QUADRO**
+
+|       | $x_1$ | $x_2$ | $x_3$ | $x_4$ | $x_5$ | $x_6$ | $x_7$ | $b$ |
+|-------|-------|-------|-------|-------|-------|-------|-------|-----|
+| $z$   | 3/2   | 4     | 0     | 0     | 0     | 3/2   | -3/2  | 12  |
+| $x_5$ | -1/2  | 3/3   | 0     | 0     | 1     | -1/2  | 0     | 2   |
+| $x_4$ | -1/2  | 3/3   | 0     | 1     | 0     | 1/2   | -1    | 2   |
+| $x_3$ | 3/2   | 2     | 1     | 0     | 0     | 1/2   | 0     | 4   |
+
+<br>
+
+#### ITERAÇÃO 4
+
+**PASSO 4.2**
+
+Como não há mais coeficientes negativos, a solução ótima foi encontrada:
+
+- $x^\ast = (x_1,x_2,x_3,x_4,x_5,x_6) = (0,0,4,2,2,0)$
+- $z = 12$
 
 <br>
 
