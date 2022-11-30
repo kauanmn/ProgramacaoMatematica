@@ -9,7 +9,7 @@ Programação Matemática
 
 ### Lista de conteúdos
 
-- [Exercício 1](#exercício-1) (incompleto)
+- [Exercício 1](#exercício-1)
 - [Exercício 2](#exercício-2) (incompleto)
 - [Exercício 3](#exercício-3) (incompleto)
 - [Exercício 4](#exercício-4) (incompleto)
@@ -47,7 +47,103 @@ Modele e resolva o problema pelo método dual simplex.
 
 ## Solução
 
-SOLUÇÃO
+**MODELAGEM - PRIMAL**
+
+```math
+\text{min } z = 65x_1 + 150x_2 + 200x_3
+```
+
+Sujeito a:
+
+```math
+\displaylines{
+    6x_1 + 12x_2 + 10x_3 \ge 2400 \\
+    8x_1 + 12x_2 + 15x_3 \ge 2800 \\
+    2x_1 + 3x_3 \ge 600 \\
+    x_1,x_2,x_3 \ge 0
+}
+```
+
+<br>
+
+**DUAL**
+
+```math
+\text{max } y = 2400w_1 + 2800w_2 + 600w_3
+```
+
+Sujeito a:
+
+```math
+\displaylines{
+    6w_1 + 8w_2 \le 65 \\
+    12w_1 + 12w_2 + 2w_3 \le 150 \\
+    10w_1 + 15w_2 + 3w_3 \le 200 \\
+    w_1,w_2,w_3 \ge 0
+}
+```
+
+<br>
+
+**PRIMAL - FORMA PADRÃO**
+
+```math
+\text{min } z = 65x_1 + 150x_2 + 200x_3
+```
+
+Sujeito a:
+
+```math
+\displaylines{
+    6x_1 + 12x_2 + 10x_3 - x_4 = 2400 \\
+    8x_1 + 12x_2 + 15x_3 - x_5 = 2800 \\
+    2x_2 + 3x_3 - x_6 = 600 \\
+    x_1,x_2,x_3,x_4,x_5,x_6 \ge 0
+}
+```
+
+<br>
+
+**QUADRO INICIAL**
+
+|       | $x_1$ | $x_2$ | $x_3$ | $x_4$ | $x_5$ | $x_6$ | $b$   |
+|-------|-------|-------|-------|-------|-------|-------|-------|
+| $z$   | 65    | 150   | 200   | 0     | 0     | 0     | 0     |
+| $x_4$ | -6    | -12   | -10   | 1     | 0     | 0     | -2400 |
+| $x_5$ | -8    | -12   | -15   | 0     | 1     | 0     | -2800 |
+| $x_6$ | 0     | -2    | -3    | 0     | 0     | 1     | -600  |
+
+> As linhas das restrições foram multiplicadas por -1
+
+<br>
+
+#### ITERAÇÃO 1
+
+**PASSO 1.2**
+
+Como há coeficientes negativos na coluna $b$, ainda não chegamos na solução ótima.
+
+<br>
+
+**PASSO 1.3**
+
+Variável que vai sair:
+
+<br>
+
+**PASSO 1.4**
+
+Variável que vai entrar:
+
+<br>
+
+**PASSO 1.5**
+
+LINHAS
+
+<br>
+
+QUADRO
 
 ---
 
