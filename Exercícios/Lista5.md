@@ -1,4 +1,4 @@
-# Lista 4 - Simplex base não disponível e Simplex revisado
+# Lista 5 - Dualidade e Dual-Simplex
 
 **Universidade Federal do ABC**<br>
 Prof.ª Geiza Cristina da Silva<br>
@@ -60,8 +60,8 @@ Seja o seguinte quadro ótimo obtido ao final do método simplex para um problem
 |       | $x_1$ | $x_2$ | $x_3$ | $x_4$ | $b$  |
 |-------|-------|-------|-------|-------|------|
 | $z$   | 0     | 0     | 4/3   | 1/6   | 50/3 |
-| $x_1$ | 0     | 1     | 2/3   | -1/6  | 10/3 |
-| $x_2$ | 1     | 0     | 1/3   | 1/6   | 20/3 |
+| $x_2$ | 0     | 1     | 2/3   | -1/6  | 10/3 |
+| $x_1$ | 1     | 0     | 1/3   | 1/6   | 20/3 |
 
 <br>
 
@@ -75,12 +75,12 @@ Indique as soluções ótimas do primal e do dual.
 
 Primal:
 
-- $x^\ast = \\{ 10/3, 20/3 \\}$
+- $x^\ast = \\{ 20/3, 10/3, 0, 0 \\}$
 - $z = 50/3$
 
 Dual:
 
-- $x^\ast = \\{ 4/3 , 1/6 \\}$
+- $x^\ast = \\{ 0, 0, 4/3 , 1/6 \\}$
 - $z = 50/3$
 
 <br>
@@ -93,7 +93,7 @@ Explique o significado das variáveis duais sobre o problema original.
 
 ### Solução
 
-As variáveis duais representam a variação da função objetivo quando se varia a restrição relativa àquela variável dual em uma unidade.
+As variáveis duais têm significado de custo reduzido, que é o custo de incluir as variáveis na solução.
 
 ---
 
