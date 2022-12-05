@@ -316,6 +316,7 @@ Variável que vai entrar: $\text{min } \\{ \vert 3/-3 \vert, \vert 2/-4 \vert, \
 
 - $L_3 \leftarrow L_3 / -4$
 - $L_1 \leftarrow L_1 - 2L_3$
+- $L_2 \leftarrow L_2 - L_3$
 
 <br>
 
@@ -360,7 +361,93 @@ Sujeito a:
 
 ### Solução
 
-SOLUÇÃO
+**FORMA PADRÃO**
+
+```math
+\text{max } z = 2x_1 + 5x_2 + x_3
+```
+
+Sujeito a:
+
+```math
+\displaylines{
+    x_1 + x_2 + x_4 = 6 \\
+    x_2 - x_3 - x_5 = 8 \\
+    x_1,x_2,x_3,x_4,x_5 \ge 0
+}
+```
+
+<br>
+
+**QUADRO INICIAL**
+
+|       | $x_1$ | $x_2$ | $x_3$ | $x_4$ | $x_5$ | $b$ |
+|-------|-------|-------|-------|-------|-------|-----|
+| z     | 2     | 5     | 1     | 0     | 0     | 0   |
+| $x_4$ | 1     | 1     | 0     | 1     | 0     | 6   |
+| $x_5$ | 0     | -1    | 1     | 0     | 1     | -8  |
+
+> Pelo menos uma restrição foi multiplicada por $-1$ para formar a base inicial.
+
+<br>
+
+**ITERAÇÃO 1**
+
+<br>
+
+**Passo 1.1**
+
+Como há coeficientes negativos na coluna de $b$, ainda não chegamos na solução ótima e devemos continuar.
+
+<br>
+
+**Passo 1.2**
+
+Variável que vai sair: $x_5$
+
+<br>
+
+**Passo 1.3**
+
+Variável que vai entrar: $\text{min } \\{ \vert 5/-1 \vert \\} \rightarrow x_2$
+
+<br>
+
+**Passo 1.4**
+
+- $L_3 \leftarrow L_3 * -1$
+- $L_1 \leftarrow L_1 - 5L_3$
+- $L_2 \leftarrow L_2 - L_3$
+
+<br>
+
+|       | $x_1$ | $x_2$ | $x_3$ | $x_4$ | $x_5$ | $b$ |
+|-------|-------|-------|-------|-------|-------|-----|
+| z     | 2     | 0     | 6     | 0     | 5     | -40 |
+| $x_4$ | 1     | 0     | 1     | 1     | 1     | -2  |
+| $x_2$ | 0     | 1     | -1    | 0     | -1    | 8   |
+
+<br>
+
+**ITERAÇÃO 2**
+
+<br>
+
+**Passo 2.1**
+
+Como há coeficientes negativos na coluna de $b$, ainda não chegamos na solução ótima e devemos continuar.
+
+<br>
+
+**Passo 2.2**
+
+Variável que vai sair: $x_4$
+
+<br>
+
+**Passo 2.3**
+
+Não há opções para a variável que vai entrar. Portanto, este problema é inviável.
 
 <br>
 
