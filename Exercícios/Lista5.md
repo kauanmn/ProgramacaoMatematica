@@ -15,8 +15,8 @@ Programação Matemática
     - [Exercício 2B](#exercício-2b)
 - [Exercício 3](#exercício-3)
     - [Exercício 3A](#exercício-3a)
-    - [Exercício 3B](#exercício-3b) (incompleto)
-    - [Exercício 3C](#exercício-3c) (incompleto)
+    - [Exercício 3B](#exercício-3b)
+    - [Exercício 3C](#exercício-3c)
 
 <br>
 
@@ -472,4 +472,133 @@ Sujeito a:
 
 ### Solução
 
-SOLUÇÃO
+**FORMA PADRÃO**
+
+```math
+\text{min } z = x_1 - 3x_2 + x_3
+```
+
+Sujeito a:
+
+```math
+\displaylines{
+    x_1 + x_2 + x_4 = 2 \\
+    x_2 - 2x_3 - x_5 = 8 \\
+    4x_1 + 2x_2 + x_3 - x_6 = 15 \\
+    x_1, x_2, x_3, x_4, x_5, x_6 \ge 0
+}
+```
+
+<br>
+
+**QUADRO INICIAL**
+
+|       | $x_1$ | $x_2$ | $x_3$ | $x_4$ | $x_5$ | $x_6$ | $b$ |
+|-------|-------|-------|-------|-------|-------|-------|-----|
+| z     | 1     | -3    | 1     | 0     | 0     | 0     | 0   |
+| $x_4$ | 1     | 1     | 0     | 1     | 0     | 0     | 2   |
+| $x_5$ | 0     | -1    | 2     | 0     | 1     | 0     | -8  |
+| $x_6$ | -4    | -2    | -1    | 0     | 0     | 1     | -15 |
+
+> Pelo menos uma restrição foi multiplicada por $-1$ para formar a base inicial.
+
+<br>
+
+**ITERAÇÃO 1**
+
+<br>
+
+**Passo 1.1**
+
+Como há coeficientes negativos na coluna de $b$, ainda não chegamos na solução ótima e devemos continuar.
+
+<br>
+
+**Passo 1.2**
+
+Variável que vai sair: $x_6$
+
+<br>
+
+**Passo 1.3**
+
+Variável que vai entrar: $\text{min } \\{ \vert 1/-4 \vert, \vert -3/-2 \vert, \vert 1/-1 \vert \\} \rightarrow x_1$
+
+<br>
+
+**Passo 1.4**
+
+- $L_4 \leftarrow L_4 * 1/-4$
+- $L_1 \leftarrow L_1 - L_4$
+- $L_2 \leftarrow L_2 - L_4$
+
+<br>
+
+|       | $x_1$ | $x_2$ | $x_3$ | $x_4$ | $x_5$ | $x_6$ | $b$   |
+|-------|-------|-------|-------|-------|-------|-------|-------|
+| z     | 0     | -7/2  | 3/4   | 0     | 0     | 1/4   | -15/4 |
+| $x_4$ | 0     | 1/2   | -1/4  | 1     | 0     | 1/4   | -7/4  |
+| $x_5$ | 0     | -1    | 2     | 0     | 1     | 0     | -8    |
+| $x_1$ | 1     | 1/2   | 1/4   | 0     | 0     | -1/4  | 15/4  |
+
+<br>
+
+**ITERAÇÃO 2**
+
+<br>
+
+**Passo 2.1**
+
+Como há coeficientes negativos na coluna de $b$, ainda não chegamos na solução ótima e devemos continuar.
+
+<br>
+
+**Passo 2.2**
+
+Variável que vai sair: $x_5$
+
+<br>
+
+**Passo 2.3**
+
+Variável que vai entrar: $\text{min } \\{ \vert (-7/2)/-1 \vert \\} \rightarrow x_2$
+
+<br>
+
+**Passo 2.4**
+
+- $L_3 \leftarrow L_3 * -1$
+- $L_1 \leftarrow L_1 + 7/2 L_3$
+- $L_2 \leftarrow L_2 - 1/2 L_3$
+- $L_4 \leftarrow L_4 - 1/2 L_3$
+
+<br>
+
+|       | $x_1$ | $x_2$ | $x_3$ | $x_4$ | $x_5$ | $x_6$ | $b$   |
+|-------|-------|-------|-------|-------|-------|-------|-------|
+| z     | 0     | 0     | -25/4 | 0     | -7/2  | 1/4   | 97/4  |
+| $x_4$ | 0     | 0     | 3/4   | 1     | 1/2   | 1/4   | -23/4 |
+| $x_2$ | 0     | 1     | -2    | 0     | -1    | 0     | 8     |
+| $x_1$ | 1     | 0     | 5/4   | 0     | 1/2   | -1/4  | -1/4  |
+
+<br>
+
+**ITERAÇÃO 3**
+
+<br>
+
+**Passo 3.1**
+
+Como há coeficientes negativos na coluna de $b$, ainda não chegamos na solução ótima e devemos continuar.
+
+<br>
+
+**Passo 3.2**
+
+Variável que vai sair: $x_4$
+
+<br>
+
+**Passo 3.3**
+
+Não há nenhum valor negativo na linha da variável $x_4$ para que seja feito o teste da razão. Portanto, este solução é inviável.
