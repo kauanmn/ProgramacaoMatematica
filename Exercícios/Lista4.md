@@ -613,7 +613,53 @@ Sujeito a:
 
 ### Solução
 
-SOLUÇÃO
+**FORMA PADRÃO**
+
+```math
+- \text{min } - z = - 3x_1 - 2x_2 + 2x_3 - 5x_4
+```
+
+Sujeito a:
+
+```math
+\displaylines{
+    x_1 + x_2 + 3x_3 + x_4 + x_5 = 8 \\
+    3x_1 - x_2 + x_3 + 2x_4 + x_6 = 10 \\
+    x_1 - x_3 + x_7 = 6 \\
+    x_1,x_2,x_3,x_4,x_5,x_6,x_7 \ge 0
+}
+```
+
+<br>
+
+**MATRIZES**
+
+```math
+\displaylines{
+    A = \begin{bmatrix} 1 & 1 & 3 & 1 & 1 & 0 & 0 \\ 3 & -1 & 1 & 2 & 0 & 1 & 0 \\ 1 & 0 & -1 & 0 & 0 & 0 & 1 \end{bmatrix} \\ \\
+    b = \begin{bmatrix} 8 \\ 10 \\ 6 \end{bmatrix} \\ \\
+    c^T = \begin{bmatrix} -3 & -2 & 2 & -5 & 0 & 0 & 0 \end{bmatrix}
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <br>
 
