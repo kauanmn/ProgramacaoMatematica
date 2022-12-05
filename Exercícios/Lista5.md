@@ -14,7 +14,7 @@ Programação Matemática
     - [Exercício 2A](#exercício-2a)
     - [Exercício 2B](#exercício-2b)
 - [Exercício 3](#exercício-3)
-    - [Exercício 3A](#exercício-3a) (incompleto)
+    - [Exercício 3A](#exercício-3a)
     - [Exercício 3B](#exercício-3b) (incompleto)
     - [Exercício 3C](#exercício-3c) (incompleto)
 
@@ -260,7 +260,83 @@ Sujeito a:
 
 ### Solução
 
-SOLUÇÃO
+**FORMA PADRÃO**
+
+```math
+\text{min } z = 3x_1 + 2x_2 + 3x_3
+```
+
+Sujeito a:
+
+```math
+\displaylines{
+    2x_1 + x_2 + x_3 + x_4 = 2 \\
+    3x_1 + 4x_2 + 2x_3 - x_5 = 8 \\
+    x_1,x_2,x_3,x_4,x_5 \ge 0
+}
+```
+
+<br>
+
+**QUADRO INICIAL**
+
+|       | $x_1$ | $x_2$ | $x_3$ | $x_4$ | $x_5$ | $b$ |
+|-------|-------|-------|-------|-------|-------|-----|
+| z     | 3     | 2     | 3     | 0     | 0     | 0   |
+| $x_4$ | 2     | 1     | 1     | 1     | 0     | 2   |
+| $x_5$ | -3    | -4    | -2    | 0     | 1     | -8  |
+
+> Pelo menos uma restrição foi multiplicada por $-1$ para formar a base inicial.
+
+<br>
+
+**ITERAÇÃO 1**
+
+<br>
+
+**Passo 1.1**
+
+Como há coeficientes negativos na coluna de $b$, ainda não chegamos na solução ótima e devemos continuar.
+
+<br>
+
+**Passo 1.2**
+
+Variável que vai sair: $x_5$
+
+<br>
+
+**Passo 1.3**
+
+Variável que vai entrar: $\text{min } \\{ \vert 3/-3 \vert, \vert 2/-4 \vert, \vert 3/-2 \vert \\} \rightarrow x_2$
+
+<br>
+
+**Passo 1.4**
+
+- $L_3 \leftarrow L_3 / -4$
+- $L_1 \leftarrow L_1 - 2L_3$
+
+<br>
+
+|       | $x_1$ | $x_2$ | $x_3$ | $x_4$ | $x_5$ | $b$ |
+|-------|-------|-------|-------|-------|-------|-----|
+| z     | 3/2   | 0     | 2     | 0     | 1/2   | -4  |
+| $x_4$ | 5/4   | 0     | 1/2   | 1     | 1/4   | 0   |
+| $x_2$ | 3/4   | 1     | 1/2   | 0     | -1/4  | 2   |
+
+<br>
+
+**ITERAÇÃO 2**
+
+<br>
+
+**Passo 2.1**
+
+Como não há mais valores negativos na coluna de $b$, então o algoritmo para e temos a seguinte solução ótima:
+
+- $x^\ast = (0,2,0)$
+- $z = 4$
 
 <br>
 
