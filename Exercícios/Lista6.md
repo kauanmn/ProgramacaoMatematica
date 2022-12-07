@@ -47,7 +47,7 @@ Modele e resolva o problema pelo método dual simplex.
 
 ## Solução
 
-**MODELAGEM - PRIMAL**
+**MODELAGEM**
 
 ```math
 \text{min } z = 65x_1 + 150x_2 + 200x_3
@@ -59,33 +59,14 @@ Sujeito a:
 \displaylines{
     6x_1 + 12x_2 + 10x_3 \ge 2400 \\
     8x_1 + 12x_2 + 15x_3 \ge 2800 \\
-    2x_1 + 3x_3 \ge 600 \\
+    2x_2 + 3x_3 \ge 600 \\
     x_1,x_2,x_3 \ge 0
 }
 ```
 
 <br>
 
-**DUAL**
-
-```math
-\text{max } y = 2400w_1 + 2800w_2 + 600w_3
-```
-
-Sujeito a:
-
-```math
-\displaylines{
-    6w_1 + 8w_2 \le 65 \\
-    12w_1 + 12w_2 + 2w_3 \le 150 \\
-    10w_1 + 15w_2 + 3w_3 \le 200 \\
-    w_1,w_2,w_3 \ge 0
-}
-```
-
-<br>
-
-**PRIMAL - FORMA PADRÃO**
+**PRIMAL**
 
 ```math
 \text{min } z = 65x_1 + 150x_2 + 200x_3
@@ -119,31 +100,109 @@ Sujeito a:
 
 #### ITERAÇÃO 1
 
-**PASSO 1.2**
+**PASSO 1.1**
 
 Como há coeficientes negativos na coluna $b$, ainda não chegamos na solução ótima.
 
 <br>
 
+**PASSO 1.2**
+
+Variável que vai sair: $x_5$
+
+<br>
+
 **PASSO 1.3**
 
-Variável que vai sair:
+Variável que vai entrar: $\text{min } \\{ 65/-8, 150/-12, 200/-15 \\} \rightarrow x_1$
 
 <br>
 
 **PASSO 1.4**
 
-Variável que vai entrar:
+- $L_3 \leftarrow L_3 * -1/8$
+- $L_1 \leftarrow L_1 - 65L_3$
+- $L_2 \leftarrow L_2 + 6L_3$
 
 <br>
 
-**PASSO 1.5**
-
-LINHAS
+|       | $x_1$ | $x_2$ | $x_3$ | $x_4$ | $x_5$ | $x_6$ | $b$    |
+|-------|-------|-------|-------|-------|-------|-------|--------|
+| z     | 0     | 105/2 | 625/8 | 0     | 65/8  | 0     | -22750 |
+| $x_4$ | 0     | -3    | 5/4   | 1     | -3/4  | 0     | -300   |
+| $x_1$ | 1     | 3/2   | 15/8  | 0     | -1/8  | 0     | 350    |
+| $x_6$ | 0     | -2    | -3    | 0     | 0     | 1     | -600   |
 
 <br>
 
-QUADRO
+#### ITERAÇÃO 2
+
+**PASSO 2.1**
+
+Como há coeficientes negativos na coluna $b$, ainda não chegamos na solução ótima.
+
+<br>
+
+**PASSO 2.2**
+
+Variável que vai sair: $x_6$
+
+<br>
+
+**PASSO 2.3**
+
+Variável que vai entrar: $\text{min } \\{ (105/2)/-2, (625/8)/-3 \\} \rightarrow x_3$
+
+<br>
+
+**PASSO 2.4**
+
+- $L_4 \leftarrow L_4 * -1/3$
+- $L_1 \leftarrow L_1 - 625/8 * L_4$
+- $L_2 \leftarrow L_2 - 5/4 * L_4$
+- $L_3 \leftarrow L_3 - 15/8 * L_4$
+
+<br>
+
+|       | $x_1$ | $x_2$ | $x_3$ | $x_4$ | $x_5$ | $x_6$  | $b$    |
+|-------|-------|-------|-------|-------|-------|--------|--------|
+| z     | 0     | 5/12  | 0     | 0     | 65/8  | 625/24 | -38375 |
+| $x_4$ | 0     | -23/6 | 0     | 1     | -3/4  | 5/12   | -550   |
+| $x_1$ | 1     | 1/4   | 0     | 0     | -1/8  | 15/24  | -25    |
+| $x_3$ | 0     | 2/3   | 1     | 0     | 0     | -1/3   | 200    |
+
+<br>
+
+#### ITERAÇÃO 3
+
+**PASSO 3.1**
+
+Como há coeficientes negativos na coluna $b$, ainda não chegamos na solução ótima.
+
+<br>
+
+**PASSO 3.2**
+
+Variável que vai sair: $x_4$
+
+<br>
+
+**PASSO 3.3**
+
+Variável que vai entrar: $\text{min } \\{ (5/12)/(-23/6), (65/8)/(-3/4) \\} \rightarrow x_2$
+
+<br>
+
+**PASSO 3.4**
+
+- $L_2 \leftarrow L_2 * (-6/23)$
+- $L_1 \leftarrow L_1 - 5/12L_2$
+- $L_3 \leftarrow L_3 - 1/4L_3$
+- $L_4 \leftarrow L_4 - 2/3L_3$
+
+<br>
+
+
 
 ---
 
