@@ -523,7 +523,7 @@ c^T = \begin{bmatrix} -2 & -4 & 0 & 0 \end{bmatrix}
 
 <br>
 
-**PRIMEIRA ITERAÇÃO**
+**ITERAÇÃO 1**
 
 1. Variável que entra na base é a que possui coeficiente mais negativo: $x_2$
 
@@ -544,11 +544,15 @@ Assim:
 }
 ```
 
+<br>
+
 4. Calcular $B^{-1}$:
 
 ```math
 B \cdot B^{-1} = I \rightarrow B^{-1} = \begin{bmatrix} 1/2 & 0 \\ -1/2 & 1 \end{bmatrix}
 ```
+
+<br>
 
 5. Calcular $x_B = B^{-1}b$:
 
@@ -642,6 +646,87 @@ Sujeito a:
 }
 ```
 
+<br>
+
+**SOLUÇÃO INICIAL**
+
+```math
+\displaylines{
+    B = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} \\ \\
+    R = \begin{bmatrix} 1 & 1 & 3 & 1 \\ 3 & -1 & 1 & 2 \\ 1 & 0 & -1 & 0 \end{bmatrix} \\ \\
+    c^T_B = \begin{bmatrix} 0 & 0 & 0 \end{bmatrix}   \\ \\
+    c^T_R = \begin{bmatrix} -3 & -2 & 2 & -5 \end{bmatrix} \\ \\
+    s_B = \{ 5,6,7 \} \\ \\
+    s_R = \{ 1,2,3,4 \}
+}
+```
+
+<br>
+
+**ITERAÇÃO 1**
+
+1. Variável que entra na base é a que possui coeficiente mais negativo: $x_4$
+
+2. Variável que sai da base usa o teste da razão (entre $b$ e $R$): $\text{min }\\{ 8/1, 10/2 \\} \rightarrow x_6$
+
+3. Recalcular $s_B, s_R, B, R, c^T_B, c^T_R$:
+
+```math
+\displaylines{
+    s_B = \{ 5,4,7 \} \\ \\
+    s_R = \{ 1,2,3,6 \}
+}
+```
+
+<br>
+
+Assim, temos:
+
+```math
+\displaylines{
+    B = \begin{bmatrix} 1 & 1 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 1 \end{bmatrix} \\ \\
+    R = \begin{bmatrix} 1 & 0 & 3 & 0 \\ 3 & -1 & 1 & 1 \\ 1 & 0 & -1 & 0 \end{bmatrix} \\ \\
+    c^T_B = \begin{bmatrix} 0 & -5 & 0 \end{bmatrix} \\ \\
+    c^T_R = \begin{bmatrix} -3 & -2 & 2 & 0 \end{bmatrix}
+}
+```
+
+<br>
+
+4. Calcular $B^{-1}$:
+
+```math
+\displaylines{
+    B = \begin{bmatrix} 1 & 1 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 1 \end{bmatrix} \\ \\
+    B^{-1} = \begin{bmatrix} 1 & -1/2 & 0 \\ 0 & 1/2 & 0 \\ 0 & 0 & 1 \end{bmatrix}
+}
+```
+
+<br>
+
+5. Calcular $x_B = B^{-1}b$:
+
+```math
+x_B = \begin{bmatrix} 1 & -1/2 & 0 \\ 0 & 1/2 & 0 \\ 0 & 0 & 1 \end{bmatrix} \cdot \begin{bmatrix} 8 \\ 10 \\ 6 \end{bmatrix} = \begin{bmatrix} 3 \\ 5 \\ 6 \end{bmatrix}
+```
+
+<br>
+
+Para avaliar a variável que vai entrar na base, deve-se calcular a matriz de coeficientes da função objetivo das variáveis não básicas por meio da equação $c^T_R - c^T_{B}B^{-1}R$.
+
+<br>
+
+6. Calcular $c^T_R - c^T_{B}B^{-1}R$:
+
+```math
+B^{-1}R = \begin{bmatrix} 1 & -1/2 & 0 \\ 0 & 1/2 & 0 \\ 0 & 0 & 1 \end{bmatrix} \cdot \begin{bmatrix} 1 & 0 & 3 & 0 \\ 3 & -1 & 1 & 1 \\ 1 & 0 & -1 & 0 \end{bmatrix} = \begin{bmatrix} -1/2 & 1/2 & 5/2 & -1/2 \\ 3/2 & -1/2 & 1/2 & 1/2 \\ 1 & 0 & -1 & 0 \end{bmatrix}
+```
+
+<br>
+
+```math
+
+```
 
 
 
